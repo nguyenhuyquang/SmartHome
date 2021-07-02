@@ -110,7 +110,7 @@ public class ProfileFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
         unbinder = ButterKnife.bind(this, view);
-        EventBus.getDefault().register(this);
+        //EventBus.getDefault().register(this);
         getDataAccount();
         initPermission();
         return view;
@@ -168,11 +168,11 @@ public class ProfileFragment extends Fragment {
     }
 
 
-   @Subscribe(sticky = true)
+ /*  @Subscribe(sticky = true)
     public void onReceivedData(DataAccount data) {
         DatabaseFirebase.pushAccount(FirebaseAuth.getInstance().getCurrentUser().getUid(),data);
     }
-
+*/
     public void getDataAccount() {
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference databaseReference = firebaseDatabase.getReference("user").child(FirebaseAuth.getInstance().getCurrentUser().getUid());

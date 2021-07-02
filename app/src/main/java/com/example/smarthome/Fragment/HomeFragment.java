@@ -43,6 +43,8 @@ import butterknife.Unbinder;
 import jp.wasabeef.recyclerview.animators.ScaleInAnimator;
 import jp.wasabeef.recyclerview.animators.SlideInLeftAnimator;
 
+import static android.content.ContentValues.TAG;
+
 public class HomeFragment extends Fragment implements ItemClickListener {
     FirebaseUser mUser;
     
@@ -168,8 +170,6 @@ public class HomeFragment extends Fragment implements ItemClickListener {
         });
         dialog.show();
     }
-
-
 
     @Subscribe(sticky = true)
     public void onReceivedData(List<HomeTypeModel> list) {
